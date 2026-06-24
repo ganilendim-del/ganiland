@@ -15,43 +15,17 @@
 body {
   min-height: 100vh;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.98) 0%, rgba(0,0,0,.78) 52%, rgba(0,0,0,.96) 100%),
-    radial-gradient(circle at 78% 58%, rgba(255,255,255,.12) 0%, rgba(255,255,255,.035) 22%, rgba(0,0,0,0) 42%),
-    linear-gradient(135deg, #0b0b0b 0%, #020202 100%);
+    background:
+  linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)),
+  url("underground-bg.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   overflow: hidden;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,.018) 0px,
-      rgba(255,255,255,.018) 1px,
-      transparent 1px,
-      transparent 120px
-    ),
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.06), transparent 28%);
-  opacity: .35;
-  pointer-events: none;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  right: 9vw;
-  top: 0;
-  width: 18vw;
-  height: 100vh;
-  background:
-    linear-gradient(90deg, transparent 0%, rgba(255,255,255,.08) 45%, rgba(255,255,255,.02) 100%);
-  opacity: .28;
-  pointer-events: none;
-}
 
 .page {
   min-height: 100vh;
