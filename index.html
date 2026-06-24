@@ -1,112 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GANILAND</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:
-radial-gradient(circle at center,
-#181818 0%,
-#080808 45%,
-#000000 100%);
-font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
-color:white;
-overflow:hidden;
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.98) 0%, rgba(0,0,0,.78) 52%, rgba(0,0,0,.96) 100%),
+    radial-gradient(circle at 78% 58%, rgba(255,255,255,.12) 0%, rgba(255,255,255,.035) 22%, rgba(0,0,0,0) 42%),
+    linear-gradient(135deg, #0b0b0b 0%, #020202 100%);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;
 }
 
-.container{
-text-align:center;
-max-width:800px;
-padding:40px;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,.018) 0px,
+      rgba(255,255,255,.018) 1px,
+      transparent 1px,
+      transparent 120px
+    ),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.06), transparent 28%);
+  opacity: .35;
+  pointer-events: none;
 }
 
-.logo{
-font-size:14px;
-letter-spacing:10px;
-opacity:.8;
-margin-bottom:80px;
+body::after {
+  content: "";
+  position: fixed;
+  right: 9vw;
+  top: 0;
+  width: 18vw;
+  height: 100vh;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(255,255,255,.08) 45%, rgba(255,255,255,.02) 100%);
+  opacity: .28;
+  pointer-events: none;
 }
 
-.title{
-font-size:clamp(42px,7vw,96px);
-letter-spacing:18px;
-font-weight:300;
-margin-bottom:30px;
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  position: relative;
 }
 
-.line{
-width:80px;
-height:1px;
-background:#444;
-margin:0 auto 30px;
+.frame {
+  position: fixed;
+  inset: 28px;
+  border: 1px solid rgba(255,255,255,.08);
+  pointer-events: none;
 }
 
-.subtitle{
-font-size:14px;
-letter-spacing:4px;
-color:#9a9a9a;
-margin-bottom:60px;
+.content {
+  text-align: center;
+  max-width: 720px;
+  transform: translateY(-8px);
 }
 
-.button{
-display:inline-block;
-padding:16px 32px;
-border:1px solid rgba(255,255,255,.25);
-color:white;
-text-decoration:none;
-letter-spacing:3px;
-font-size:12px;
-transition:.25s;
+.logo {
+  font-size: 13px;
+  letter-spacing: 10px;
+  font-weight: 400;
+  margin-bottom: 58px;
+  color: rgba(255,255,255,.86);
 }
 
-.button:hover{
-background:white;
-color:black;
+.statement {
+  font-size: clamp(26px, 4vw, 54px);
+  letter-spacing: clamp(8px, 1.4vw, 20px);
+  line-height: 1.55;
+  font-weight: 300;
 }
 
+.line {
+  width: 72px;
+  height: 1px;
+  background: rgba(255,255,255,.28);
+  margin: 38px auto;
+}
+
+.work {
+  font-size: clamp(24px, 3.6vw, 48px);
+  letter-spacing: clamp(9px, 1.6vw, 22px);
+  font-weight: 300;
+}
+
+.enter {
+  display: inline-block;
+  margin-top: 48px;
+  padding: 15px 42px;
+  border: 1px solid rgba(255,255,255,.26);
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 4px;
+  transition: .25s ease;
+}
+
+.enter:hover {
+  background: #fff;
+  color: #000;
+}
+
+.note {
+  margin-top: 34px;
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: rgba(255,255,255,.52);
+}
+
+.instagram {
+  position: fixed;
+  left: 48px;
+  bottom: 44px;
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 700px) {
+  .frame {
+    inset: 16px;
+  }
+
+  .logo {
+    margin-bottom: 42px;
+    letter-spacing: 7px;
+  }
+
+  .statement {
+    letter-spacing: 7px;
+  }
+
+  .work {
+    letter-spacing: 7px;
+  }
+
+  .instagram {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 28px;
+  }
+}
 </style>
 </head>
 
 <body>
+  <div class="frame"></div>
 
-<div class="container">
+  <main class="page">
+    <section class="content">
+      <div class="logo">GANILAND</div>
 
-<div class="logo">
-GANILAND
-</div>
+      <div class="statement">
+        NO SHOP.<br>
+        NO STUDIO.<br>
+        NO CROWD.
+      </div>
 
-<div class="title">
-COMING SOON
-</div>
+      <div class="line"></div>
 
-<div class="line"></div>
+      <div class="work">
+        ONLY WORK.
+      </div>
 
-<div class="subtitle">
-THE ARCHIVE IS BEING BUILT.
-</div>
+      <a class="enter" href="https://instagram.com/gani_coo" target="_blank">
+        ENTER
+      </a>
 
-<a class="button"
-href="https://instagram.com/gani_coo"
-target="_blank">
-INSTAGRAM
-</a>
+      <div class="note">
+        PRIVATE APPOINTMENT ONLY.
+      </div>
+    </section>
 
-</div>
-
+    <a class="instagram" href="https://instagram.com/gani_coo" target="_blank">
+      INSTAGRAM
+    </a>
+  </main>
 </body>
 </html>
